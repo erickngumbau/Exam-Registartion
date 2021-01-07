@@ -7,52 +7,171 @@
     tools:context=".SignUpActivity"
     android:padding="10dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Full Name"
-        android:id="@+id/name"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Date of Birth"
-        android:id="@+id/date"
-        android:layout_below="@+id/name"
-        android:layout_marginTop="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:id="@+id/name"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:hint="Date of Birth"
+                android:id="@+id/date"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="10dp"/>
 
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:hint="Registration No."
-        android:layout_below="@+id/date"
-        android:layout_marginTop="10dp"/>
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:hint="Registration No."
+                android:layout_below="@+id/date"
+                android:layout_marginTop="10dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="10dp"
-        android:hint="Password"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Image"
-        android:layout_marginTop="10dp"
-        android:id="@+id/upload"
-        android:layout_below="@+id/password"/>
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/password"
+                android:layout_below="@+id/username"
+                android:layout_marginTop="10dp"
+                android:hint="Password"/>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:id="@+id/image"
-        android:layout_toRightOf="@+id/upload"
-        android:layout_below="@+id/password"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year"
+                android:layout_marginTop="10dp"
+                android:id="@+id/year"
+                android:layout_below="@+id/password"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:layout_alignBaseline="@+id/year"
+                android:layout_toRightOf="@+id/year"
+                android:layout_toEndOf="@+id/year"
+                android:entries="@array/year"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sem"
+                android:text="Semester"
+                android:layout_below="@+id/year"
+                android:layout_marginTop="10dp"/>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:id="@+id/rgroup"
+                android:layout_below="@+id/sem">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First"
+                    android:id="@+id/firstsem"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Second"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/secsem"/>
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Units"
+                android:id="@+id/unitselect"
+                android:textStyle="bold"
+                android:layout_below="@+id/rgroup"
+                android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/unitselect"
+                android:id="@+id/withcheckbox1"
+                android:layout_marginTop="10dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/java"
+                    android:text="BCS 110 Programming in Java"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/java"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/python"
+                    android:text="BCS 110 Programming in python"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/c"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/python"
+                    android:text="BCS 110 Programming in C"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/c"
+                    android:id="@+id/cplus"
+                    android:layout_marginTop="10dp"
+                    android:text="BCS 110 Programming in C++"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Image"
+                android:layout_marginTop="10dp"
+                android:id="@+id/upload"
+                android:layout_below="@+id/withcheckbox1"/>
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:id="@+id/image"
+                android:layout_toRightOf="@+id/upload"
+                android:layout_below="@+id/upload"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="save"
+                android:id="@+id/btnsave"
+                android:layout_below="@+id/image"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
 
 </RelativeLayout>

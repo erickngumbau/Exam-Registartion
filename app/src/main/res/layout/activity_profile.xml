@@ -4,68 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
-    android:padding="10dp">
-    
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_alignParentRight="true"
-        android:id="@+id/image"
-        android:layout_alignParentEnd="true" />
+    tools:context=".ProfileActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:layout_marginTop="10dp"
-        android:id="@+id/username"
-        android:layout_below="@+id/image"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/firstlayout"
+        android:padding="10dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registered"
-        android:id="@+id/registration"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/username"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_alignParentRight="true"
+            android:id="@+id/image"
+            android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit profile"
-        android:layout_below="@+id/registration"
-        android:layout_alignParentRight="true"
-        android:id="@+id/edit"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Units"
-        android:textSize="17sp"
-        android:id="@+id/units"
-        android:layout_below="@+id/edit"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="40dp"
-        android:textStyle="bold"/>
-
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/units"
-        android:layout_marginTop="9dp">
-
-        <ListView
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </ScrollView>
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginTop="10dp"
+            android:id="@+id/username"
+            android:layout_below="@+id/image"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registered"
+            android:id="@+id/registration"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/username"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile"
+            android:layout_below="@+id/registration"
+            android:layout_alignParentRight="true"
+            android:id="@+id/edit"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Units"
+            android:textSize="17sp"
+            android:id="@+id/units"
+            android:layout_below="@+id/edit"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"/>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/units"
+                android:id="@+id/listview"
+                android:layout_marginTop="5dp"/>
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
