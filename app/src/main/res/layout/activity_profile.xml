@@ -38,10 +38,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Edit profile"
+        android:layout_below="@+id/registration"
+        android:layout_alignParentRight="true"
+        android:id="@+id/edit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Units"
         android:textSize="17sp"
         android:id="@+id/units"
-        android:layout_below="@+id/registration"
+        android:layout_below="@+id/edit"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="40dp"
         android:textStyle="bold"/>
