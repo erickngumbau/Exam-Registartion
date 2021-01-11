@@ -12,16 +12,17 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private ImageView imageView;
     private ScrollView scrollView;
-    private TextView name,registration,units,profileedit;
+    private TextView name,registration,units,unitstodo;
     private RelativeLayout first;
     private ListView listView;
+    DatabaseHelper db;
 
 
     @Override
@@ -29,38 +30,38 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        imageView = findViewById(R.id.image);
+        db = new DatabaseHelper(ProfileActivity.this);
         name = findViewById(R.id.username);
         registration = findViewById(R.id.registration);
         units=findViewById(R.id.units);
-        profileedit=findViewById(R.id.edit);
         first = findViewById(R.id.firstlayout);
-        listView =findViewById(R.id.listview);
+        unitstodo = findViewById(R.id.unitstodo);
+
+        Intent intent = getIntent();
+        String username= intent.getStringExtra("username");
+        name.setText(username);
 
 
-        ArrayList<String> units = new ArrayList<>();
-        units.add("BCS 110 Programming in Java");
-        units.add("BCS 111 Programming in Python");
-        units.add("BCS 112 Programming in C++");
-        units.add("BCS 113 Programming in C");
-        units.add("BCS 114 Programming in Spring");
-        units.add("BCS 114 Programming in PHP");
+        ////////////////////////////////////////
+        String usernm = username;
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-            this,
-                android.R.layout.simple_list_item_1,
-                units
-        );
+        Boolean res=  db.checkforstudentregistration(usernm);
 
-        listView.setAdapter(adapter);
+        if(res==true){
+            registration.setText("Registered");
+            ArrayList<String> allfromunits;
+            allfromunits=db.getStudentsUnits();
+
+            unitstodo.setText(allfromunits.toString());
+            Toast.makeText(ProfileActivity.this, "You are Registered", Toast.LENGTH_SHORT).show();
 
 
-        profileedit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              Intent intent = new Intent(ProfileActivity.this,SignUpActivity.class);
-              startActivity(intent);
-            }
-        });
+        }
+        else{
+            registration.setText("Not Registered");
+            Toast.makeText(ProfileActivity.this, "You are Not Registered", Toast.LENGTH_SHORT).show();
+        }
+        ///////////////////////////////////////
+
     }
 }

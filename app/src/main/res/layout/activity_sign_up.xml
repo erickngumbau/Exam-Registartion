@@ -7,13 +7,42 @@
     tools:context=".SignUpActivity"
     android:padding="10dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:padding="10dp"
+            android:id="@+id/stdlayout">
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/signupusername"
+                android:hint="Username"/>
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/signuppass"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/signupusername"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:id="@+id/signupregister"
+                android:layout_below="@+id/signuppass"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <EditText
                 android:layout_width="250dp"
@@ -21,21 +50,13 @@
                 android:hint="Full Name"
                 android:id="@+id/name"/>
 
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:hint="Date of Birth"
-                android:id="@+id/date"
-                android:layout_below="@+id/name"
-                android:layout_marginTop="10dp"/>
-
 
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
                 android:hint="Registration No."
-                android:layout_below="@+id/date"
+                android:layout_below="@+id/name"
                 android:layout_marginTop="10dp"/>
 
 
@@ -142,35 +163,18 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Upload Image"
-                android:layout_marginTop="10dp"
-                android:id="@+id/upload"
-                android:layout_below="@+id/withcheckbox1"/>
-
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="10dp"
-                android:src="@mipmap/ic_launcher_round"
-                android:id="@+id/image"
-                android:layout_toRightOf="@+id/upload"
-                android:layout_below="@+id/upload"/>
-
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="save"
                 android:id="@+id/btnsave"
-                android:layout_below="@+id/image"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/withcheckbox1"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true" />
 
         </RelativeLayout>
-    </ScrollView>
 
 
 

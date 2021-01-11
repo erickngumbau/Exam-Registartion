@@ -50,4 +50,13 @@
         android:background="@color/colorAccent"
         android:text="Login"/>
 
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnadmin"
+        android:text="Admin Login"
+        android:layout_below="@+id/signup"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
